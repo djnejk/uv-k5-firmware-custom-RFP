@@ -53,9 +53,9 @@ void UI_DisplayWelcome(void)
 		memset(WelcomeString0, 0, sizeof(WelcomeString0));
 		memset(WelcomeString1, 0, sizeof(WelcomeString1));
 
-		if (gEeprom.POWER_ON_DISPLAY_MODE == POWER_ON_DISPLAY_MODE_VOLTAGE)
+		if (true) 
 		{
-			strcpy(WelcomeString0, "VOLTAGE");
+			strcpy(WelcomeString0, "Run For Planet");
 			sprintf(WelcomeString1, "%u.%02uV %u%%",
 				gBatteryVoltageAverage / 100,
 				gBatteryVoltageAverage % 100,
@@ -67,7 +67,7 @@ void UI_DisplayWelcome(void)
 			EEPROM_ReadBuffer(0x0EC0, WelcomeString1, 16);
 		}
 
-		UI_PrintString(WelcomeString0, 0, 127, 0, 10);
+		UI_PrintStringSmallNormal(WelcomeString0, 0, 127, 0);
 		UI_PrintString(WelcomeString1, 0, 127, 2, 10);
 		UI_PrintStringSmallNormal(Version, 0, 128, 6);
 

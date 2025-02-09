@@ -16,8 +16,8 @@ void COMMON_KeypadLockToggle()
             gAnotherVoiceID = gEeprom.KEY_LOCK ? VOICE_ID_UNLOCK : VOICE_ID_LOCK;
         #endif
 
-        gEeprom.KEY_LOCK = !gEeprom.KEY_LOCK;
-
+    //    gEeprom.KEY_LOCK = !gEeprom.KEY_LOCK;
+gEeprom.KEY_LOCK = true;
         gRequestSaveSettings = true;
     }
 }

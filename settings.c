@@ -49,7 +49,7 @@ void SETTINGS_InitEEPROM(void)
 	#ifdef ENABLE_NOAA
 		gEeprom.NOAA_AUTO_SCAN   = (Data[3] <  2) ? Data[3] : false;
 	#endif
-	gEeprom.KEY_LOCK             = (Data[4] <  2) ? Data[4] : false;
+	gEeprom.KEY_LOCK             = true;
 	#ifdef ENABLE_VOX
 		gEeprom.VOX_SWITCH       = (Data[5] <  2) ? Data[5] : false;
 		gEeprom.VOX_LEVEL        = (Data[6] < 10) ? Data[6] : 1;
@@ -67,7 +67,8 @@ void SETTINGS_InitEEPROM(void)
 	gEeprom.CROSS_BAND_RX_TX      = (Data[2] < 3) ? Data[2] : CROSS_BAND_OFF;
 	gEeprom.BATTERY_SAVE          = (Data[3] < 5) ? Data[3] : 4;
 	gEeprom.DUAL_WATCH            = (Data[4] < 3) ? Data[4] : DUAL_WATCH_CHAN_A;
-	gEeprom.BACKLIGHT_TIME        = (Data[5] < ARRAY_SIZE(gSubMenu_BACKLIGHT)) ? Data[5] : 3;
+	gEeprom.BACKLIGHT_TIME        = 1; 
+	// gEeprom.BACKLIGHT_TIME        = (Data[5] < ARRAY_SIZE(gSubMenu_BACKLIGHT)) ? Data[5] : 3;
 	gEeprom.TAIL_TONE_ELIMINATION = (Data[6] < 2) ? Data[6] : false;
 	gEeprom.VFO_OPEN              = (Data[7] < 2) ? Data[7] : true;
 

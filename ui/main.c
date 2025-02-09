@@ -316,12 +316,42 @@ void UI_DisplayMain(void)
 		ST7565_BlitFullScreen();
 		return;
 	}
-
-	if (gEeprom.KEY_LOCK && gKeypadLocked > 0)
+	if (true)
+	// if (gEeprom.KEY_LOCK && gKeypadLocked > 0)
 	{	// tell user how to unlock the keyboard
-		UI_PrintString("Long press #", 0, LCD_WIDTH, 1, 8);
-		UI_PrintString("to unlock",    0, LCD_WIDTH, 3, 8);
-		ST7565_BlitFullScreen();
+		UI_PrintString("Run for Planet", 0, LCD_WIDTH, 0, 8);
+		// UI_PrintString("to unlock",    0, LCD_WIDTH, 3, 8);
+
+	const uint8_t testbitttm[18] =
+	{	// "VOX"
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111,
+		0b11111111
+	};
+			memcpy(gFrameBuffer[2] + 0, testbitttm, 18);
+			memcpy(gFrameBuffer[3] + 0, testbitttm, 18);
+			memcpy(gFrameBuffer[4] + 0, testbitttm, 18);
+			memcpy(gFrameBuffer[5] + 0, testbitttm, 18);
+			memcpy(gFrameBuffer[6] + 0, testbitttm, 18);
+
+ST7565_BlitFullScreen(); // Překreslení celé obrazovky
+
+
 		return;
 	}
 
