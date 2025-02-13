@@ -265,17 +265,17 @@ void ACTION_Handle(KEY_Code_t Key, bool bKeyPressed, bool bKeyHeld)
 
 		// side1 btn pressed
 
-		gBeepToPlay = BEEP_1KHZ_60MS_OPTIONAL;
-		gRequestDisplayScreen = DISPLAY_MAIN;
+		// gBeepToPlay = BEEP_1KHZ_60MS_OPTIONAL;
+		// gRequestDisplayScreen = DISPLAY_MAIN;
 
-		if (gDTMF_InputBox_Index <= 0) {
-			// turn off DTMF input box if no codes left
-			gDTMF_InputMode = false;
-			return;
-		}
+		// if (gDTMF_InputBox_Index <= 0) {
+		// 	// turn off DTMF input box if no codes left
+		// 	gDTMF_InputMode = false;
+		// 	return;
+		// }
 
-		// DTMF codes are in the input box
-		gDTMF_InputBox[--gDTMF_InputBox_Index] = '-'; // delete one code
+		// // DTMF codes are in the input box
+		// gDTMF_InputBox[--gDTMF_InputBox_Index] = '-'; // delete one code
 
 #ifdef ENABLE_VOICE
 		gAnotherVoiceID   = VOICE_ID_CANCEL;
